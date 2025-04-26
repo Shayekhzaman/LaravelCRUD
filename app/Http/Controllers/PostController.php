@@ -40,8 +40,9 @@ class PostController extends Controller
         return redirect()->route('home')->with("success", "Post Created Successfully");
     }
 
-    public function edit()
+    public function edit($id)
     {
-        return view("edit");
+        $post = Post::findOrFail($id);
+        return view("edit", ["editablePost" => $post]);
     }
 }

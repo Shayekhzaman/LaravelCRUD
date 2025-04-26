@@ -12,7 +12,7 @@
 <body>
     <div class="px-10 mx-auto mt-8">
         <div class="flex justify-between">
-            <h2 class="text-red-500">Edit</h2>
+            <h2 class="text-red-500">Edit - {{ $editablePost->name }}</h2>
             <a href="/" class="bg-green-600 text-white px-2 py-1 rounded">
                 Back to home
             </a>
@@ -23,14 +23,15 @@
                 @csrf
                 <div class="flex flex-col gap-5">
                     <label for="">Name</label>
-                    <input type="text" name="name" placeholder="Name" value="{{ old('name') }}"
+                    <input type="text" name="name" placeholder="Name" value="{{ $editablePost->name }}"
                         class="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     @error('name')
                         <p class="text-red-500 text-sm">{{ $message }}</p>
                     @enderror
-                    
+
                     <label for="">Description</label>
-                    <input type="text" name="description" placeholder="Description" value="{{ old('description') }}"
+                    <input type="text" name="description" placeholder="Description"
+                        value="{{ $editablePost->description }}"
                         class="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     @error('description')
                         <p class="text-red-500 text-sm">{{ $message }}</p>
