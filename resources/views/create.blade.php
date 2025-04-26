@@ -19,18 +19,18 @@
         </div>
 
         <div class="max-w-md mx-auto mt-10">
-            <form method="POST" action="{{ route('store') }}">
+            <form method="POST" action="{{ route('store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="flex flex-col gap-5">
                     <label for="">Name</label>
-                    <input type="text" name="name" placeholder="Name"
+                    <input type="text" name="name" placeholder="Name" value="{{ old('name') }}"
                         class="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     @error('name')
                         <p class="text-red-500 text-sm">{{ $message }}</p>
                     @enderror
                     
                     <label for="">Description</label>
-                    <input type="text" name="description" placeholder="Description"
+                    <input type="text" name="description" placeholder="Description" value="{{ old('description') }}"
                         class="border border-gray-300 rounded px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500" />
                     @error('description')
                         <p class="text-red-500 text-sm">{{ $message }}</p>

@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container mt-8">
         <div class="flex justify-between">
             <h2 class="text-red-500">Home</h2>
             <a href="/create" class="bg-green-600 text-white px-2 py-1 rounded">
