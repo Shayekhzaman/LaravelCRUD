@@ -28,7 +28,7 @@ class PostController extends Controller
         $post = new Post;
         $post->name = $validated['name'];
         $post->description = $validated['description'];
-        $post->image = $imageName ;
+        $post->image = $imageName;
 
         // Handle the image upload if image is provided
         // if ($request->hasFile('image')) {
@@ -38,5 +38,10 @@ class PostController extends Controller
 
         $post->save();
         return redirect()->route('home')->with("success", "Post Created Successfully");
+    }
+
+    public function edit()
+    {
+        return view("edit");
     }
 }

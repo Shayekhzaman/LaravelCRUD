@@ -8,6 +8,7 @@ Route::get('/', function () {
     return view('welcome', ["posts" => Post::all()]);
 })->name('home');
 
-Route::get('create', [PostController::class, "create"]);
+Route::get('/create', [PostController::class, "create"]);
+Route::get('/edit/{id}', [PostController::class, "edit"])->name('edit');
 
-Route::post('store', [PostController::class, "ourFilestore"])->name('store');
+Route::post('/store', [PostController::class, "ourFilestore"])->name('store');
