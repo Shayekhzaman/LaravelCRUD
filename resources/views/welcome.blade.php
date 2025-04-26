@@ -71,7 +71,9 @@
                                                 src="images/{{ $post->image }}" width="80px" alt=""></td>
                                         <td class="px-6 py-4 whitespace-nowrap text-end text-sm font-medium">
                                             <a href="{{ route('edit', $post->id) }}" class="btn">Edit</a>
+                                            <a href="{{ route('delete', $post->id) }}" class="bg-red-600 text-white px-2 py-1 rounded">Delete</a>
                                         </td>
+
                                     </tr>
                                 @endforeach
                             </tbody>

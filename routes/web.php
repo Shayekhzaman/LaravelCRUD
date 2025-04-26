@@ -9,6 +9,8 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/create', [PostController::class, "create"]);
-Route::get('/edit/{id}', [PostController::class, "edit"])->name('edit');
+Route::get('/edit/{id}', [PostController::class, "editData"])->name('edit');
 
 Route::post('/store', [PostController::class, "ourFilestore"])->name('store');
+Route::post('/update/{id}', [PostController::class, "updateData"])->name('update');
+Route::get('/delete/{id}', [PostController::class, "deleteData"])->name('delete');
